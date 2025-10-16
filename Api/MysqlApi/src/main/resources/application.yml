@@ -2,8 +2,8 @@ spring:
   application:
     name: MysqlApi
   datasource:
-    url: jdbc:mysql://localhost:3306/mysqlproject?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-    username: mypro
+    url: jdbc:mysql://localhost:3306/second_hand_trading?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
