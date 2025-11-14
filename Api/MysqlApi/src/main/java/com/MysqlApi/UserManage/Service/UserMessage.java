@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class UserMessage {
     private String oldData;
     private String newData;
+    private Integer isBanned;
+    private String username;
 }

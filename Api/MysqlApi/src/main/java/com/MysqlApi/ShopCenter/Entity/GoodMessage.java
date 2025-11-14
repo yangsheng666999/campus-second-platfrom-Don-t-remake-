@@ -15,4 +15,5 @@ public class GoodMessage {
     private Integer price;
     private String username;
     LocalDateTime time;
+    private Integer conditon;
 }

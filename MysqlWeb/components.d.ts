@@ -16,7 +16,9 @@ declare module 'vue' {
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElRadio: typeof import('element-plus/es')['ElRadio']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
+    ElRate: typeof import('element-plus/es')['ElRate']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -26,6 +26,7 @@ interface goodsMessage {
   gid?: string
   gname: string
   price: number
+  conditon:number
   username?: string
 }
 

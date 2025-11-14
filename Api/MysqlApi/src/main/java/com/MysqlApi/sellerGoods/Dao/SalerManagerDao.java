@@ -1,6 +1,6 @@
-package com.MysqlApi.salerManager.Dao;
+package com.MysqlApi.sellerGoods.Dao;
 
-import com.MysqlApi.salerManager.Entity.SalerMessage;
+import com.MysqlApi.sellerGoods.Entity.SalerMessage;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -12,10 +12,10 @@ import java.util.List;
 @Mapper
 public interface SalerManagerDao {
 
-    @Select("SELECT gid, gname, price, status, create_time FROM goods WHERE uid = #{username} ORDER BY create_time DESC")
+    @Select("SELECT gid, gname, price, status, time  FROM salemanager WHERE uid = #{username} ORDER BY time DESC")
     List<SalerMessage> getAllrecord(@RequestParam("username") String username);
 
-    @Select("SELECT status FROM goods WHERE gid = #{gid}")
+    @Select("SELECT status FROM salemanager WHERE gid = #{gid}")
     String getStatus(@RequestParam("gid") String gid);
 
     @Update("UPDATE goods SET price = #{NewMoney} WHERE gid = #{gid}")

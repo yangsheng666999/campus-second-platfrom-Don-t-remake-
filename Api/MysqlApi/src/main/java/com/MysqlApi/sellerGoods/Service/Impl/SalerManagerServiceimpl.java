@@ -1,8 +1,8 @@
-package com.MysqlApi.salerManager.Service.Impl;
+package com.MysqlApi.sellerGoods.Service.Impl;
 
-import com.MysqlApi.salerManager.Dao.SalerManagerDao;
-import com.MysqlApi.salerManager.Entity.SalerMessage;
-import com.MysqlApi.salerManager.Service.salerManagerService;
+import com.MysqlApi.sellerGoods.Dao.SalerManagerDao;
+import com.MysqlApi.sellerGoods.Entity.SalerMessage;
+import com.MysqlApi.sellerGoods.Service.salerManagerService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

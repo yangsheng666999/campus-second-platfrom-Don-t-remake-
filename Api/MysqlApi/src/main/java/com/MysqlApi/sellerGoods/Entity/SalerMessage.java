@@ -1,4 +1,4 @@
-package com.MysqlApi.salerManager.Entity;
+package com.MysqlApi.sellerGoods.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,5 +14,5 @@ public class SalerMessage {
     private String gname;
     private Integer price;
     private String status;          // 0=在售，1=已售出
-    private LocalDateTime create_time;  // 对应数据库的 create_time
+    private LocalDateTime time;  // 对应数据库的time字段
 }

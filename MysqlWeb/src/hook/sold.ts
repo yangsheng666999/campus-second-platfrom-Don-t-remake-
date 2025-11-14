@@ -5,6 +5,7 @@ async function getAllrecode(page: number, username: string) {
   try {
     const reponse = await GetAllrecord(page, username)
     if (reponse.data.status === 200) {
+      ElMessage.success('查询成功')
       return reponse.data
     } else {
       ElMessage.error('查询失败')

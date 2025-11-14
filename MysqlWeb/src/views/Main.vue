@@ -11,7 +11,7 @@
           </template>
           <el-menu-item-group title="交易信息">
             <el-menu-item index="/main/buy">已购买</el-menu-item>
-            <el-menu-item index="/main/sold">已售出</el-menu-item>
+            <el-menu-item index="/main/sold">售卖状态</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group title="个人信息">
             <el-menu-item index="/main/user">修改个人信息</el-menu-item>

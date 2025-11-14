@@ -7,6 +7,8 @@
           <span>商品名：{{ good.gname }}</span>
           <br />
           <span>价格：{{ good.price }}元</span>
+          <br />
+          <span>几成新：{{ good.conditon }}</span>
         </header>
         <footer>
           <el-button @click="buyGood(good.gid as string)">购买</el-button>
@@ -25,6 +27,23 @@
         <div class="name">商品名:<input type="text" v-model="goodname" /></div>
         <div class="price">
           价格:<input type="number" min="0" style="width: 5em" v-model="price" />
+        </div>
+        <!-- 新增：商品图片上传 -->
+        <!-- <div class="image-upload">
+          商品图片:
+          <el-upload
+            class="upload-demo"
+            action="/upload"
+            :on-success="handleImageUploadSuccess"
+            :before-upload="beforeImageUpload"
+            :on-error="handleImageUploadError"
+            :limit="1">
+            <el-button size="small" type="primary">点击上传</el-button>
+          </el-upload>
+        </div> -->
+        <!-- 几成新 -->
+        <div class="condition">
+          几成新：<input type="number" min="1" style="width: 5em" v-model="conditon" max="10"/>
         </div>
       </div>
       <template #footer>
@@ -144,6 +163,9 @@
     } catch {}
   })
   //新增商品
+
+  // 几成新
+  const conditon = ref<number>(10)
   const goodname = ref<string>('')
   const price = ref<number>(0)
   const user = userStore()
@@ -153,7 +175,10 @@
       return
     }
     try {
-      await addgoods({ gname: goodname.value, price: price.value, username: user.username })
+      await addgoods({ conditon: conditon.value, gname: goodname.value,
+      price: price.value, username: user.username })
+
+
       const res = await getAllgoods(Page.value)
       if (res !== null) {
         const data: PageResponse = res.data
