@@ -1,6 +1,6 @@
 package com.MysqlApi.Register;
 
-import com.MysqlApi.Login.Service.UserData;
+import com.MysqlApi.Login.Entity.UserData;
 import com.MysqlApi.Register.Service.RegisterService;
 import com.MysqlApi.Result;
 import org.mindrot.jbcrypt.BCrypt;

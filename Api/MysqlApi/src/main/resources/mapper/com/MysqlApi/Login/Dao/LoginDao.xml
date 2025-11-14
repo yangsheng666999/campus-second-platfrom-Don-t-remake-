@@ -5,7 +5,7 @@
     <select id="getHashPassword" resultType="string">
         select password from user where username=#{username}
     </select>
-    <select id="getUserData" resultType="com.MysqlApi.Login.Service.UserData">
+    <select id="getUserData" resultType="com.MysqlApi.Login.Entity.UserData">
         select username,pass,money from user where username=#{username}
     </select>
 </mapper>

@@ -1,4 +1,4 @@
-package com.MysqlApi.Login.Service;
+package com.MysqlApi.Login.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

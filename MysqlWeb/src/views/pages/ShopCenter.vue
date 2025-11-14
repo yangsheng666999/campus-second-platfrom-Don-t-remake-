@@ -178,7 +178,7 @@
       await addgoods({ conditon: conditon.value, gname: goodname.value,
       price: price.value, username: user.username })
 
-
+      
       const res = await getAllgoods(Page.value)
       if (res !== null) {
         const data: PageResponse = res.data

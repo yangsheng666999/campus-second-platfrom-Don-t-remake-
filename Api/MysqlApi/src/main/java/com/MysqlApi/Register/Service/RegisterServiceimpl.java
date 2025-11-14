@@ -1,6 +1,7 @@
 package com.MysqlApi.Register.Service;
 
-import com.MysqlApi.Login.Service.UserData;
+
+import com.MysqlApi.Login.Entity.UserData;
 import com.MysqlApi.Register.Dao.RegisterDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
