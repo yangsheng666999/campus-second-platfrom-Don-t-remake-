@@ -1,5 +1,6 @@
 package com.MysqlApi.salerManager.Service;
 
+import com.MysqlApi.salerManager.Entity.SalerMessage;
 import com.github.pagehelper.PageInfo;
 
 public interface salerManagerService {

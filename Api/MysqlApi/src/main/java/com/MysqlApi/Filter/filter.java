@@ -1,6 +1,7 @@
 package com.MysqlApi.Filter;
 
 import com.MysqlApi.JWT.Jwtservice;
+import com.MysqlApi.Result;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -42,10 +43,16 @@ public class filter implements Filter {
         }
         try {
             String token=request.getHeader("token");
+            if (token == null || token.isEmpty()) {
+                String authHeader = request.getHeader("Authorization");
+                if (authHeader != null && authHeader.startsWith("Bearer ")) {
+                    token = authHeader.substring(7); // 去掉 Bearer + 空格
+                }
+            }
             String username=request.getHeader("username");
-            if(jwtservice.checkJWT(token,username)){
+            if(jwtservice.checkJWT(token,username) ){
                 filterChain.doFilter(servletRequest, servletResponse);
-            }else{
+            }  else{
                 response.setStatus(403);
             }
         }catch (Exception e){

@@ -1,6 +1,6 @@
 package com.MysqlApi.ShopCenter.Dao;
 
-import com.MysqlApi.ShopCenter.Service.GoodMessage;
+import com.MysqlApi.ShopCenter.Entity.GoodMessage;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

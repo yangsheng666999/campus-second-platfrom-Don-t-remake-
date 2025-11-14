@@ -1,4 +1,4 @@
-package com.MysqlApi.Recharge;
+package com.MysqlApi.Recharge.Control;
 
 import com.MysqlApi.Recharge.Service.RechargeMessage;
 import com.MysqlApi.Recharge.Service.RechargeService;

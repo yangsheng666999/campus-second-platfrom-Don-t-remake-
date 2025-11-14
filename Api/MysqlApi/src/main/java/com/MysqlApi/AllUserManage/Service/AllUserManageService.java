@@ -6,4 +6,5 @@ public interface AllUserManageService {
     public PageInfo<UserMessage> getAllUser(int pageNum,  int pageSize);
     public void updatePass(UserMessage userMessage);
     public void deleteUser(String username);
+    public void updateIsBanned(UserMessage userMessage);
 }

@@ -11,6 +11,12 @@ interface UserMessage {
   pass: string
 }
 
+// 封禁用户定义个接口
+interface updateUserBanned{
+  username: string
+  isBanned: number
+}
+
 interface rechargeMessage {
   username: string
   money: number
@@ -144,12 +150,17 @@ function GetAllBuyMessage(page: number) {
   })
 }
 
+function UpdateIsBanned(message: updateUserBanned) {
+  return axios.post(path.base + path.path.updateIsBanned,message)
+}
+
 export {
   type UserMessage,
   type LoginMessage,
   type rechargeMessage,
   type goodsMessage,
   type updateUserMessage,
+  type updateUserBanned,
   Login,
   Check,
   getUSer,
@@ -168,4 +179,5 @@ export {
   UpdatePassword,
   UpdateUsername,
   GetAllBuyMessage,
+  UpdateIsBanned,
 }

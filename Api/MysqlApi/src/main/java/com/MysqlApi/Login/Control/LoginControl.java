@@ -1,4 +1,4 @@
-package com.MysqlApi.Login;
+package com.MysqlApi.Login.Control;
 
 import com.MysqlApi.JWT.Jwtservice;
 import com.MysqlApi.Login.Service.LoginService;

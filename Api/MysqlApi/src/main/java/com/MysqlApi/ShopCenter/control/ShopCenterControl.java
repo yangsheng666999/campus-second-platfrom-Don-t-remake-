@@ -1,4 +1,4 @@
-package com.MysqlApi.ShopCenter;
+package com.MysqlApi.ShopCenter.control;
 
 import com.MysqlApi.Result;
 import com.MysqlApi.ShopCenter.Service.ShopCenterService;

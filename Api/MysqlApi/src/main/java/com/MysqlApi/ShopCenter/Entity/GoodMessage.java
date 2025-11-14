@@ -1,4 +1,4 @@
-package com.MysqlApi.salerManager.Service;
+package com.MysqlApi.ShopCenter.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SalerMessage {
+public class GoodMessage {
     private String gid;
     private String gname;
     private Integer price;
-    private String status;
-    private LocalDateTime time;
+    private String username;
+    LocalDateTime time;
 }

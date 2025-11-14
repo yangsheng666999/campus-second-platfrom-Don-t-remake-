@@ -1,8 +1,8 @@
-package com.MysqlApi.salerManager;
+package com.MysqlApi.sellerGoods.Control;
 
 import com.MysqlApi.Result;
 import com.MysqlApi.salerManager.Service.salerManagerService;
-import com.MysqlApi.salerManager.Service.SalerMessage;
+import com.MysqlApi.salerManager.Entity.SalerMessage;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
