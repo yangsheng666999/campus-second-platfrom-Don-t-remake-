@@ -1,6 +1,6 @@
 <template>
   <div class="contain">
-    <header class="head">校园旧货管理系统<button @click="exit">退出</button></header>
+    <header class="head">校园二手交易平台<button @click="exit">退出</button></header>
     <nav>
       <el-menu class="el-menu-vertical-demo" default-active="/main/shop" router>
         <el-menu-item index="/main/shop">交易大厅</el-menu-item>
