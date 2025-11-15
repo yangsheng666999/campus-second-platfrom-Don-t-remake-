@@ -1,7 +1,9 @@
-package com.MysqlApi.ShopCenter.Service;
+package com.MysqlApi.ShopCenter.Service.Impl;
 
 import com.MysqlApi.Recharge.Dao.RechargeDao;
 import com.MysqlApi.ShopCenter.Dao.ShopCenterDao;
+import com.MysqlApi.ShopCenter.Entity.GoodMessage;
+import com.MysqlApi.ShopCenter.Service.ShopCenterService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class ShopCenterServiceimpl implements ShopCenterService{
+public class ShopCenterServiceimpl implements ShopCenterService {
     @Autowired
     private ShopCenterDao shopCenterDao;
     @Autowired

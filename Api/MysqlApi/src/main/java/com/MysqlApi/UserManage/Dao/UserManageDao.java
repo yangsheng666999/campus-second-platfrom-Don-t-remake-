@@ -2,6 +2,7 @@ package com.MysqlApi.UserManage.Dao;
 
 import com.MysqlApi.UserManage.Service.UserMessage;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 @Mapper
@@ -17,4 +18,7 @@ public interface UserManageDao {
 
     @Update("update salerecode set uid=#{newData} where uid=#{oldData}")
     public void updateUsername3(UserMessage userMessage);
+
+    @Select("select * from user where username=#{username}")
+    public UserMessage getUser(String username);
 }

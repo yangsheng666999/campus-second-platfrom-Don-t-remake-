@@ -1,6 +1,6 @@
 package com.MysqlApi.Register.Dao;
 
-import com.MysqlApi.Login.Service.UserData;
+import com.MysqlApi.Login.Entity.UserData;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

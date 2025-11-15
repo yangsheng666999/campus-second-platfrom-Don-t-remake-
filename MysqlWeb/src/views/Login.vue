@@ -1,7 +1,7 @@
 <template>
   <div class="contain">
     <div class="login">
-      <p class="title">校园旧物交易平台</p>
+      <p class="title">校园二手交易平台</p>
       <div class="message">
         <p>登录</p>
         <input type="text" placeholder="用户名" v-model="username" />

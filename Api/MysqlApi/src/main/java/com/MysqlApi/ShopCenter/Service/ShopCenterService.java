@@ -1,8 +1,10 @@
 package com.MysqlApi.ShopCenter.Service;
 
+import com.MysqlApi.ShopCenter.Entity.GoodMessage;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+
 
 public interface ShopCenterService {
     public void addgood(GoodMessage goodMessage);

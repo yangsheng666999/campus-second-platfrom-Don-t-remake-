@@ -10,11 +10,14 @@ import java.util.List;
 
 @Mapper
 public interface AllUserManageDao {
-    @Select("select username,pass from user order by pass desc")
+    @Select("select username,pass,isBanned from user order by pass desc")
     public List<UserMessage> getAllUser();
     @Update("update user set pass=#{pass} where username=#{username}")
     public void updatePass(UserMessage userMessage);
     @Delete("delete from user where username=#{username}")
     public void deleteUser(String username);
     public void deleterUserSaleRecode(String username);
+
+    @Update("update user set isBanned=#{isBanned} where username=#{username}")
+    public void updateIsBanned(UserMessage userMessage);
 }

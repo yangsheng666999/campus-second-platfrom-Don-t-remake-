@@ -24,4 +24,10 @@ public class UserManageServiceimpl implements UserManageService{
         userManageDao.updateUsername2(userMessage);
         userManageDao.updateUsername3(userMessage);
     }
+
+    @Override
+    public UserMessage getUser(String username) {
+        userManageDao.getUser(username);
+        return userManageDao.getUser(username);
+    }
 }

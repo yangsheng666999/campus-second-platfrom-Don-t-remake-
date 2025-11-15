@@ -1,6 +1,6 @@
 package com.MysqlApi.ShopCenter.Dao;
 
-import com.MysqlApi.ShopCenter.Service.GoodMessage;
+import com.MysqlApi.ShopCenter.Entity.GoodMessage;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -15,7 +15,7 @@ public interface ShopCenterDao {
     @Select("select * from is_saling")
     public List<GoodMessage> getAllGoods();
 
-    @Insert("insert into goods(gid,gname,price,uid) values (#{gid},#{gname},#{price},#{username})")
+    @Insert("insert into goods(gid,gname,price,uid,conditon) values (#{gid},#{gname},#{price},#{username},#{conditon})")
     public void addGoods1(GoodMessage goodMessage);
 
     @Insert("insert into salerecode(gid,status,time) values (#{gid},0,#{time})")

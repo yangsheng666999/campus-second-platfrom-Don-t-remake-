@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AllUserManageControl {
     @Autowired
     AllUserManageService userMangeService;
+
     @RequestMapping("/getAllUser")
     public Result getAllUser(@RequestParam("pageNum") int pageNum) {
         try{
@@ -26,10 +27,10 @@ public class AllUserManageControl {
     public Result updatePass(@RequestBody UserMessage userMessage) {
         try{
             userMangeService.updatePass(userMessage);
-            return Result.success("修改成功",null);
+            return Result.success("修改成功","pass:" + userMessage.getPass());
         }
         catch (Exception e) {
-            return Result.error("修改失败",null);
+            return Result.error("修改失败","pass:" + userMessage.getPass());
         }
     }
     @RequestMapping("/deleteUser")
@@ -40,6 +41,17 @@ public class AllUserManageControl {
         }
         catch (Exception e) {
             return Result.error("删除失败",null);
+        }
+    }
+
+    @RequestMapping("/banUser")
+    public Result banUser(@RequestBody UserMessage userMessage) {
+        try{
+            userMangeService.updateIsBanned(userMessage);
+            return Result.success("封禁成功",userMessage.getIsBanned());
+        }
+        catch (Exception e) {
+            return Result.error("封禁失败",null);
         }
     }
 }

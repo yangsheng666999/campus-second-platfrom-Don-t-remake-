@@ -19,6 +19,7 @@ const path = {
     updatePassword: '/updatePassword',
     updateUsername: '/updateUsername',
     getAllBuyMessage: '/getAllBuyMessage',
+    updateIsBanned: '/banUser',
   },
 }
 

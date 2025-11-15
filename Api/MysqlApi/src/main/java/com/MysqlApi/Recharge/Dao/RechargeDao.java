@@ -1,6 +1,7 @@
 package com.MysqlApi.Recharge.Dao;
 
-import com.MysqlApi.Recharge.Service.RechargeMessage;
+
+import com.MysqlApi.Recharge.Entity.RechargeMessage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;

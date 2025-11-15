@@ -9,6 +9,7 @@ instance.interceptors.request.use(
     if (localStorage.getItem('token') != null) {
       config.headers['token'] = localStorage.getItem('token')
       config.headers['username'] = localStorage.getItem('username')
+      config.headers['isBanned'] = localStorage.getItem('isBanned')
     }
     return config
   },

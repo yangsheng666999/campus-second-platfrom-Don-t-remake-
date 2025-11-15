@@ -5,6 +5,7 @@
         <tr>
           <th>用户名</th>
           <th>权限</th>
+          <th>状态</th>
           <th>操作</th>
         </tr>
       </thead>
@@ -12,9 +13,11 @@
         <tr>
           <td>{{ user.username }}</td>
           <td>{{ user.pass === '0' ? '普通用户' : '管理员' }}</td>
+          <td>{{ user.isBanned === 1 ? '已封禁' : '正常' }}</td>
           <td>
             <button @click="dialogshow(user.username, user.pass)">修改权限</button>
             <button @click="delUser(user.username)">删除用户</button>
+            <button @click="dialogBanUser(user.username, user.isBanned)">封禁权限</button>
           </td>
         </tr>
       </tbody>
@@ -37,6 +40,20 @@
         </div>
       </template>
     </el-dialog>
+
+
+    <el-dialog v-model="dialogVisibleBanUser" :title="dialogtitle" width="500">
+      <el-radio-group v-model="checkbanned">
+        <el-radio value=0 size="large">解封用户</el-radio>
+        <el-radio value=1 size="large">封禁用户</el-radio>
+      </el-radio-group>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="dialogVisibleBanUser = false">取消</el-button>
+          <el-button type="primary" @click="banUser">确认</el-button>
+        </div>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
@@ -45,6 +62,8 @@
   import { getAllUser } from '@/hook/getAllUser.ts'
   import { updatapass } from '@/hook/updatapass.ts'
   import { deleteUser } from '@/hook/deleteUser.ts'
+  import { updateIsBanned } from '@/hook/updateIsBanned'
+
   //修改权限
   const dialogVisible = ref<boolean>(false)
   const dialogtitle = ref<string>('')
@@ -52,6 +71,20 @@
   const checkname = ref<string>('')
   const radiocheck = ref<string | null>()
 
+
+  //封禁用户
+  const checkbanned = ref<number | 0>(0)
+  const dialogVisibleBanUser = ref<boolean>(false)
+
+  function dialogBanUser(name: string, isBanned: number) {
+    dialogtitle.value = '封禁用户' + name + '的权限'
+    checkbanned.value = isBanned
+    checkname.value = name
+    dialogVisibleBanUser.value = true
+
+  }
+
+  // 修改权限
   function dialogshow(name: string, pass: string) {
     dialogtitle.value = '修改用户' + name + '的权限'
     radiocheck.value = pass
@@ -63,6 +96,7 @@
   interface tabledata {
     username: string
     pass: string
+    isBanned:number
   }
   interface PageResponse {
     pageNum: number
@@ -97,6 +131,23 @@
       }
     } catch {
       dialogVisible.value = false
+    }
+  }
+
+  //封禁用户
+  async function banUser(){
+    try {
+      await updateIsBanned( { username: checkname.value, isBanned: checkbanned.value })
+      dialogVisibleBanUser.value = false
+      const reponse = await getAllUser(Page.value)
+      if (reponse !== null) {
+        const data: PageResponse = reponse.data
+        UserList.value = data.list
+        Usertotal.value = data.total
+        Page.value = data.pageNum
+      }
+    }catch (error){
+      console.error("封禁失败",error)
     }
   }
 

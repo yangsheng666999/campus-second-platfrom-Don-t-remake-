@@ -22,7 +22,11 @@ async function addgoods(message: goodsMessage) {
     const data = reponse.data
     if (data.status === 200) {
       ElMessage.success('添加成功')
-    } else {
+    }else if(data.message === '用户被封禁') {
+      ElMessage.error('用户被封禁')
+      return null
+    }
+    else {
       ElMessage.error('添加失败')
       return null
     }

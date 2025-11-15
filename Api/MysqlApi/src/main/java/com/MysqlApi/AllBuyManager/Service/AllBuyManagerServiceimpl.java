@@ -1,7 +1,6 @@
 package com.MysqlApi.AllBuyManager.Service;
 
 import com.MysqlApi.AllBuyManager.Dao.AllBuyManagerDao;
-import com.MysqlApi.salerManager.Service.SalerMessage;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

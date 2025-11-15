@@ -1,8 +1,8 @@
-package com.MysqlApi.Login;
+package com.MysqlApi.Login.Control;
 
 import com.MysqlApi.JWT.Jwtservice;
+import com.MysqlApi.Login.Entity.UserData;
 import com.MysqlApi.Login.Service.LoginService;
-import com.MysqlApi.Login.Service.UserData;
 import com.MysqlApi.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

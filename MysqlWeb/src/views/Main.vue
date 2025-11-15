@@ -1,6 +1,6 @@
 <template>
   <div class="contain">
-    <header class="head">校园旧货管理系统<button @click="exit">退出</button></header>
+    <header class="head">校园二手交易平台<button @click="exit">退出</button></header>
     <nav>
       <el-menu class="el-menu-vertical-demo" default-active="/main/shop" router>
         <el-menu-item index="/main/shop">交易大厅</el-menu-item>
@@ -11,7 +11,7 @@
           </template>
           <el-menu-item-group title="交易信息">
             <el-menu-item index="/main/buy">已购买</el-menu-item>
-            <el-menu-item index="/main/sold">已售出</el-menu-item>
+            <el-menu-item index="/main/sold">售卖状态</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group title="个人信息">
             <el-menu-item index="/main/user">修改个人信息</el-menu-item>
@@ -116,7 +116,7 @@
   import { storeToRefs } from 'pinia'
   import router from '@/router'
   import { onBeforeMount } from 'vue'
-  import { check } from '@/hook/check.ts'
+  // import { check } from '@/hook/check.ts'
   import { getuser } from '@/hook/Login.ts'
 
   const { username, pass, money } = storeToRefs(userStore())
@@ -128,7 +128,7 @@
   }
 
   onBeforeMount(async () => {
-    await check()
+    // await check()
     await getuser(localStorage.getItem('username') as string)
   })
 </script>

@@ -35,4 +35,9 @@ public class AllUserManageServiceimpl implements AllUserManageService {
         userManageDao.deleteUser(username);
         userManageDao.deleterUserSaleRecode(username);
     }
+
+    @Override
+    public void updateIsBanned(UserMessage userMessage) {
+        userManageDao.updateIsBanned(userMessage);
+    }
 }
