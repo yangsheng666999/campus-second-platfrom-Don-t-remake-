@@ -1,4 +1,4 @@
-package com.MysqlApi.Recharge.Service;
+package com.MysqlApi.Recharge.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,7 @@
 package com.MysqlApi.Recharge.Control;
 
-import com.MysqlApi.Recharge.Service.RechargeMessage;
+
+import com.MysqlApi.Recharge.Entity.RechargeMessage;
 import com.MysqlApi.Recharge.Service.RechargeService;
 import com.MysqlApi.Result;
 import org.springframework.beans.factory.annotation.Autowired;
