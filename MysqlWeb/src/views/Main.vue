@@ -116,7 +116,7 @@
   import { storeToRefs } from 'pinia'
   import router from '@/router'
   import { onBeforeMount } from 'vue'
-  import { check } from '@/hook/check.ts'
+  // import { check } from '@/hook/check.ts'
   import { getuser } from '@/hook/Login.ts'
 
   const { username, pass, money } = storeToRefs(userStore())
@@ -128,7 +128,7 @@
   }
 
   onBeforeMount(async () => {
-    await check()
+    // await check()
     await getuser(localStorage.getItem('username') as string)
   })
 </script>

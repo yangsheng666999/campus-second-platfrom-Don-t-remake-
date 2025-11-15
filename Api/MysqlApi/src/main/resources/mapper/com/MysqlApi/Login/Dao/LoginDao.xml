@@ -6,6 +6,6 @@
         select password from user where username=#{username}
     </select>
     <select id="getUserData" resultType="com.MysqlApi.Login.Entity.UserData">
-        select username,pass,money from user where username=#{username}
+        select username,pass,money,password from user where username=#{username}
     </select>
 </mapper>
